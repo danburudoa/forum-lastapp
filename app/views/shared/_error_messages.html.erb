@@ -1,75 +1,9 @@
-<header class="header">
-		<div class="inner header__inner">
-			<h1 class="header__logo">フィードバックチャンネル</h1>
-			<!-- /.header__logo -->
-		</div><!-- /.header__inner -->
- </header><!-- /.header -->
-
-<div class="main-show">
-        <div class="topic-wrap-show">
-         <!--パンくずリスト-->
-          <ol class="bread-wrap">
-            <li class="bread-main">
-              <%= link_to "ホーム", root_path ,class: :bread_show %>
-              <meta itemprop="position" content="1" />
-            </li>
-            
-            <li class="bread-main">
-              <%= link_to "#{@board.title}",class: :bread_show %>
-              <meta itemprop="position" content="2" />
-            </li>
-            
-            <% if user_signed_in? && current_user.id == @board.user_id %>
-               <div class="board__manage">
-                 <%= link_to "編集する", edit_board_path(@board), class: :board__btn %>
-                 <%= link_to "削除する",  board_path(@board.id), method: :delete, class: :board__btn %>
-               </div>
-            <% end %>
-          </ol>
-          <!--パンくずリストここまで-->
-    
-
-          <div class="head-area">    
-              <%= image_tag (@board.image), class: :show_img %>    
-            <div class="head-right">
-              <h1><%= "#{@board.title}"%></h1>
-              <h3 class="show_text"><%= "#{@board.text}"%></h3>
-              <p class="comment"><span class="icon-comment"></span><%= @board.comments.count %><span>コメント</span><span class="datetime"><%= l @board.created_at %></span></p>
-              <a href="#form" class="btn btn-positive">コメントを投稿する</a>
-            </div>
-          </div>
-
-          <!---ページネーション--->    
-             <%= paginate @comment_page%>
-          <!----コメント表示-->
-
-          <div class="board__comments">
-             <ul class="comments_lists">
-                <% if @comments %>
-                  <% @comments.each do |comment| %>
-                    <li class="comments_list">
-                      <div class="comments_wrap">
-                        <p>
-                          <%= link_to "#{comment.user.nickname}", class: :comment_user %>
-                          <%= l comment.created_at%>
-                        </p>
-                        <p class="comment_text"><%= comment.text %></p>
-                      </div>                 
-                    </li>
-                  <% end %>
-                <% end %>
-            </ul>
-            <% if user_signed_in? %>
-              <%= form_with(model: [@board, @comment], local: true ,class: :show_comment ,id: :form) do |f| %>
-              <%= render 'shared/error_messages', model: f.object %>
-                <div class="field">
-                  <%= f.label :text, "コメントを投稿する",class: :show__text %><br />
-                  <%= f.text_area :text ,class: :show__btn%>
-                </div>
-                <div class="actions">
-                  <%= f.submit "送信する", class: :form__btn  %>
-                </div>
-              <% end %> 
-            <% end %>  
-          </div>
+<% if model.errors.any? %>
+<div class="error-alert">
+  <ul>
+    <% model.errors.full_messages.each do |message| %>
+    <li class='error-message'><%= message %></li>
+    <% end %>
+  </ul>
 </div>
+<% end %>
