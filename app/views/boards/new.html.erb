@@ -1,0 +1,15 @@
+<header class="header">
+		<div class="inner header__inner">
+			<h1 class="header__logo">フィードバックチャンネル</h1>
+			<!-- /.header__logo -->
+		</div><!-- /.header__inner -->
+ </header><!-- /.header -->
+ 
+<div class="main-new">
+  <div class="inner-new">
+    <div class="form__wrapper-new">
+      <h2 class="page-heading-new">トピックを投稿する</h2>
+       <%= render partial: "form", locals: { board: @boards } %>
+    </div>
+  </div>
+</div>

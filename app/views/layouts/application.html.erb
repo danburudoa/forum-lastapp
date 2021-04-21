@@ -1,15 +1,155 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ForumLastapp</title>
+    <title>BoardApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- コード追加Bootstrap JavaScript読み込みコード-->
+    
   </head>
 
-  <body>
+<body>
+
     <%= yield %>
-  </body>
+	<div class="totop floating"><a href="#"><%= image_tag 'totop.png', alt: "上部へスクロール"%></a></div><!-- /.totop -->
+ </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>
+		jQuery(function () {
+
+			// スムーススクロール
+			jQuery('a[href^="#"]').click(function () {
+				let header = jQuery(".header").innerHeight();
+				let speed = 1000;
+				let id = jQuery(this).attr("href");
+				let target = jQuery("#" == id ? "html" : id);
+				let position = jQuery(target).offset().top - header;
+				if ("fixed" !== jQuery(".header").css("position")) {
+					position = jQuery(target).offset().top;
+				}
+				if (0 > position) {
+					position = 0;
+				}
+				jQuery("html, body").animate({
+					scrollTop: position
+				},
+					speed
+				);
+				return false;
+			});
+
+			// スクロール判定
+			jQuery(window).on("scroll", function () {
+
+				if (100 < jQuery(this).scrollTop()) {
+					jQuery('.totop').addClass('is-show');
+				} else {
+					jQuery('.totop').removeClass('is-show');
+				}
+			});
+		});
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+
+	<script>
+		// ドロワー
+		jQuery(".js-drawer").on("click", function (e) {
+			e.preventDefault();
+			let targetClass = jQuery(this).attr("data-target");
+			jQuery("." + targetClass).toggleClass("is-checked");
+			return false;
+		});
+	</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+
+	<script>
+		jQuery(window).on("scroll", function ($) {
+			if (jQuery(this).scrollTop() > 100) {
+				jQuery('.floating').show();
+			} else {
+				jQuery('.floating').hide();
+			}
+		});
+
+		jQuery('.floating').click(function () {
+			jQuery('body,html').animate({
+				scrollTop: 0
+			}, 500);
+			return false;
+		});
+	</script>
+
+
+
+	<script>
+		jQuery('.header__nav ul li a').click(function () {
+			jQuery('.header__nav ul li a').removeClass('is-active');
+			jQuery(this).addClass('is-active');
+			return false;
+		});
+	</script>
+
+
+
+	<%#クリック（タブ）%>
+	<script>
+		jQuery('.tab__nav ul li span').click(function (e) {
+			e.preventDefault();
+			let target = jQuery(this).data("target");
+
+			jQuery('.tab__nav ul li span').removeClass('is-active');
+			jQuery(this).addClass('is-active');
+
+			jQuery('.tab-item').removeClass('is-active');
+			jQuery(target).addClass('is-active');
+
+			return false;
+		});
+	</script>
+
+
+	<script>
+		jQuery('.accordion__head').click(function () {
+			jQuery(this).next().slideToggle();
+			jQuery(this).children('.according__icon').toggleClass('is-open');
+		});
+	</script>
+
+
+	<!---モーダル開く-->
+	<script>
+		jQuery('.js-modal-open').click(function (e) {
+			e.preventDefault();
+			let target = jQuery(this).data("target");
+			jQuery('.' + target).addClass('is-show');
+
+			return false;
+		});
+	</script>
+
+
+	<!---モーダル閉じる-->
+	<script>
+		jQuery('.js-modal-close').click(function (e) {
+			e.preventDefault();
+			let target = jQuery(this).data("target");
+			jQuery('.' + target).removeClass('is-show');
+
+			return false;
+		});
+	</script>

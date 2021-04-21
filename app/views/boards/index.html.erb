@@ -1,0 +1,78 @@
+	<header class="header">
+		<div class="inner header__inner">
+			<h1 class="header__logo">フィードバックチャンネル</h1>
+			<!-- /.header__logo -->
+			<nav class="header__nav">
+				<ul>
+					<li><a href="#a-card"　class="is-active">最新記事</a></li>					
+				</ul>
+			</nav><!-- /.header__nav -->
+		</div><!-- /.header__inner -->
+         </header><!-- /.header -->
+
+	<button class="drawer-icon js-drawer for-drawer" type="button" data-target="for-drawer">
+		<span class="drawer-bars">
+			<span class="drawer-bar"></span>
+			<span class="drawer-bar"></span>
+			<span class="drawer-bar"></span>
+		</span>
+	</button><!-- /drawer-icon -->
+	<div class="drawer-background for-drawer"></div>
+	<div class="drawer-content for-drawer">
+		<ul>
+			<li><a href="#a-card"></a></li>
+			<li><a href="#a-news"></a></li>
+			<li><a href="#a-price"></a></li>
+			<li><a href="#a-access"></a></li>
+			<li><a href="#a-contact"></a></li>
+		</ul>
+	</div><!-- /drawer-content -->
+
+
+
+	<div class="mainvisual">
+		<div class="mainvisual__content">
+			<div class="mainvisual__title">一番伝えたい<br class="hidden-tab hidden-pc">ことを書く</div>
+			<!-- /.mainvisual__title -->
+			<div class="mainvisual__lead">意見をたくさんもらおう</div><!-- /.mainvisual__lead -->
+			<% if user_signed_in? %>
+			  <div class="mainvisual__button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'button-mainvisual'%></div>
+			  <div class="mainvisual__button"><%= link_to '投稿する', new_board_path, class: 'button-mainvisual'%></div>
+			<% else%>
+			  <div class="mainvisual__button"><%= link_to "新規登録", new_user_registration_path, class: 'button-mainvisual'%></div> 
+			  <div class="mainvisual__button"><%= link_to "ログイン", new_user_session_path, class: 'button-mainvisual'%></div>		
+			<% end %>
+			<!-- /.mainvisual__button -->
+		</div><!-- /.mainvisual__content -->
+	</div><!-- /.mainvisual -->
+
+
+	<section id="a-card" class="card section">
+		<div class="card__inner inner">
+			<h2 class="section-title">最新テーマ</h2><!-- /.section-title -->
+			<div class="card__items">
+				<%= render partial: 'board', collection: @boards %>
+			</div><!-- /.card__items -->
+			<%= paginate @board_page %>
+		</div><!-- /.card__inner -->
+		
+	</section><!-- /.card -->
+
+    <footer class="footer">
+		<div class="footer__inner inner">
+			<div class="footer__contents">
+				<div class="footer__center">
+					<!-- /.footer__logo -->
+					<div class="footer__info">
+					    <p>コンセプト<p/>
+						<ul>
+						   <li>自分の考えを投稿してフィードバックをもらおう。</li>
+						   <li>誹謗中傷のないように。</li>
+						</ul>
+					</div><!-- /.footer__info -->
+				</div><!-- /.footer__left -->	
+			</div><!-- /.footer__contents -->
+			<div class="footer__copy">Copyright &copy; 2020 
+			  <a href="#" target="_blank"></a></div><!-- /.footer__copy -->
+		</div><!-- /.footer__inner -->
+	</footer><!-- /.footer -->
