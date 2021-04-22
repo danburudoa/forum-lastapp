@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: forum_lastapp_production
-  username: forum_lastapp
-  password: <%= ENV['FORUM_LASTAPP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
