@@ -196,6 +196,12 @@ img {
   transition: all 0.3s ease 0s;
 }
 
+@media (max-width: 767px) {
+  .header__logo {
+    font-size: 18px;
+  }
+}
+
 .header__nav {
   margin-left: auto;
 }
@@ -250,6 +256,7 @@ img {
   height: 600px;
   width: 100%;
   background: transparent url("mainvisual.png") no-repeat top center/cover;
+  background-image: image-url("mainvisual.png");
   position: relative;
   overflow: hidden;
 }
@@ -837,6 +844,9 @@ img {
   .footer__info {
     margin-top: 20px;
   }
+  .footer__info ul {
+    display: flex;
+  }
 }
 
 .footer__info p {
@@ -1125,6 +1135,7 @@ img {
 .main-show {
   background: #EEFFFF;
   padding-top: 20px;
+  min-height: 90vh;
 }
 
 .topic-wrap-show {
