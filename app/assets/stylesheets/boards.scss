@@ -246,10 +246,6 @@ img {
 		text-decoration: none;
 		transition: all 0.3s ease 0s;
 	}
-
-	@include mq('sp'){
-		font-size:18px;
-	}
 }
 
 .header__nav {
@@ -864,12 +860,9 @@ $drawer-content-width: 200px;
 	color: #fff;
 	font-size: 14px;
 
-    @include mq('sp') {
-        margin-top: 20px;
-        ul{
-           display: flex;
-        }
-    }
+	@include mq('sp') {
+		margin-top: 20px;
+	}
 
 	p {
         text-align:center;
