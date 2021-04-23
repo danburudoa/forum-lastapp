@@ -22,8 +22,7 @@ class BoardsController < ApplicationController
     
     def show  
        @comment = Comment.new
-       @comments = @board.comments.order(created_at: :desc).includes(:user)
-       @comment_page = Comment.all.page(params[:page]).per(10)
+       @comments = @board.comments.order(created_at: :desc).includes(:user).page(params[:page]).per(50)
     end
  
     def edit
