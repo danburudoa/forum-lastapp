@@ -864,13 +864,12 @@ $drawer-content-width: 200px;
 	color: #fff;
 	font-size: 14px;
 
-	@include mq('sp') {
-		margin-top: 20px;
-
-		ul{
+    @include mq('sp') {
+        margin-top: 20px;
+        ul{
            display: flex;
-		}
-	}
+        }
+    }
 
 	p {
         text-align:center;
