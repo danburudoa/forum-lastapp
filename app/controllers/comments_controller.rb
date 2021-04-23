@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
+    
     def create
       @comment = Comment.new(comment_params)
       if @comment.save
-        redirect_to board_path(@comment.board) # 今回の実装には関係ありませんが、このようにPrefixでパスを指定することが望ましいです。
+        @time = @comment.created_at.strftime("%Y/%m/%d/ %H:%M:%S")
+        ActionCable.server.broadcast 'comment_channel', content: @comment, user: @comment.user, date: @time
       else
-          @board = @comment.board
-          @comments = @board.comments
-          render "boards/show" # views/tweets/show.html.erbのファイルを参照しています。
-        end
+        redirect_to board_path(@comment.board) # 今回の実装には関係ありませんが、このようにPrefixでパスを指定することが望ましいです。
+      end
     end
 
     private
