@@ -44,12 +44,13 @@
           <!----コメント表示-->
 
           <div class="board__comments">
-             <ul class="comments_lists">
+             <ul class="comments_lists" >
+              <div id="comments">
                 <% if @comments %>
                   <% @comments.each do |comment| %>
                     <li class="comments_list">
                       <div class="comments_wrap">
-                        <p>
+                        <p class="comment_info">
                           <%= link_to "#{comment.user.nickname}", class: :comment_user %>
                           <%= l comment.created_at%>
                         </p>
@@ -58,9 +59,10 @@
                     </li>
                   <% end %>
                 <% end %>
-            </ul>
+                </div>
+             </ul>
             <% if user_signed_in? %>
-              <%= form_with(model: [@board, @comment], local: true ,class: :show_comment ,id: :form) do |f| %>
+              <%= form_with(model: [@board, @comment], local: false ,class: :show_comment ,id: :form) do |f| %>
               <%= render 'shared/error_messages', model: f.object %>
                 <div class="field">
                   <%= f.label :text, "コメントを投稿する",class: :show__text %><br />
