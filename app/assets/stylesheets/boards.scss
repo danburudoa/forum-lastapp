@@ -246,6 +246,10 @@ img {
 		text-decoration: none;
 		transition: all 0.3s ease 0s;
 	}
+
+	@include mq('sp'){
+		font-size:18px;
+	}
 }
 
 .header__nav {
@@ -305,7 +309,6 @@ img {
 	height: 600px;
 	width: 100%;
 	background: transparent url('mainvisual.png') no-repeat top center / cover;
-	background-image:image-url('mainvisual.png');
 	position: relative;
 	overflow: hidden;
 
@@ -862,6 +865,10 @@ $drawer-content-width: 200px;
 
 	@include mq('sp') {
 		margin-top: 20px;
+
+		ul{
+           display: flex;
+		}
 	}
 
 	p {
