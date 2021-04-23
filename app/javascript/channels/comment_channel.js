@@ -22,7 +22,9 @@ consumer.subscriptions.create("CommentChannel", {
       </div>`;
     const comments = document.getElementById('comments');
     const newComment = document.getElementById('comment_text');
+    const newCommentInfo = document.getElementById('comment_info');
     comments.insertAdjacentHTML('afterbegin', html);
     newComment.value = '';
+    newCommentInfo.value = '';
   }
 });
