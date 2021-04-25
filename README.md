@@ -3,7 +3,7 @@
  [![Image from Gyazo](https://i.gyazo.com/30cfeb5d5bdf7adb63a11b950133e4d8.jpg)](https://gyazo.com/30cfeb5d5bdf7adb63a11b950133e4d8)
  [![Image from Gyazo](https://i.gyazo.com/5368c9d5a11180de568afc6173704483.jpg)](https://gyazo.com/5368c9d5a11180de568afc6173704483)
 # App URL
-https://forum-original.herokuapp.com/
+http://54.95.240.27/
 # テスト用アカウント
 Basic認証
 * ユーザー名 : admin
@@ -29,33 +29,34 @@ Basic認証
 * ページネーション機能(kaminari)
 * jQuery
   -  スムーススクロール
+  
   -  ドロワー
-  -  スクロールトップ
 * レスポンシブデザイン(トップページのみ)
 
 # 目指した課題解決
 自分の考えに対して、他者はどのような考えを持つのかを知るために掲示板アプリを作成した。また、フィードバックをもらい、それを投稿者自身の人生に活かしていけるような掲示板アプリケーションを目指した。
 
+# 実装した機能についての画像やGIFおよびその説明
 ```
-ユーザー管理機能
+ユーザー管理機能 : 誰でも投稿やコメントができるわけではなく、自分が伝えたかったことを一緒に考えてくれる人たちが集まれるように、ユーザー管理機能を実装した。
 ```
 ログイン前 : トップ画面に「新規登録」、「ログイン」のボタンがある
 [![Image from Gyazo](https://i.gyazo.com/24128e692d32564d2540fb0a9574ddd2.jpg)](https://gyazo.com/24128e692d32564d2540fb0a9574ddd2)
 ログイン後 : トップ画面に「ログアウト」、「投稿する」にボタンが切り替わる
 [![Image from Gyazo](https://i.gyazo.com/b623b9bc1b84b3eb6fcfe2e8ce672acd.jpg)](https://gyazo.com/b623b9bc1b84b3eb6fcfe2e8ce672acd)
 ```
-投稿機能
+投稿機能 : 記事を投稿するために実装した。また、投稿内容に関連した画像を表示させることで、クリック率を上げるためにActive Storageを導入した。
 ```
 投稿後トップページへ遷移するGIF
 [![Image from Gyazo](https://i.gyazo.com/5a10e5f19ea73371c7ad96b51b93638f.gif)](https://gyazo.com/5a10e5f19ea73371c7ad96b51b93638f)
 ```
-コメント投稿機能
+コメント投稿機能 : コメントを投稿するために実装した。
 ```
 [![Image from Gyazo](https://i.gyazo.com/f0f742271863f10a257fe69d67212199.gif)](https://gyazo.com/f0f742271863f10a257fe69d67212199)
 
 # jQuery
 ```
-スムーススクロール : 最新テーマの数が増えてきたときに、簡単に移動できるよう実装した。
+スムーススクロール : 最新テーマの数が増えてきたときに、簡単に移動できるように実装した。
 ```
 [![Image from Gyazo](https://i.gyazo.com/ffa847b456b8f22d622a12a4842b7c97.gif)](https://gyazo.com/ffa847b456b8f22d622a12a4842b7c97)
 
@@ -66,7 +67,7 @@ Basic認証
 
 # ページネーション
 ```
-コメントが多くなった時、コメントをみやすくするために実装した。
+コメントが多くなった時、分割して見やすくするために実装した。
 ```
 [![Image from Gyazo](https://i.gyazo.com/90f7f0fe958df63156c2d305d8b70777.gif)](https://gyazo.com/90f7f0fe958df63156c2d305d8b70777)
 
