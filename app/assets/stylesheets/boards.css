@@ -255,7 +255,8 @@ img {
 .mainvisual {
   height: 600px;
   width: 100%;
-  background-image: url("mainvisual.png");
+  background: transparent url("mainvisual.png") no-repeat top center/cover;
+  background-image: image-url("mainvisual.png");
   position: relative;
   overflow: hidden;
 }
