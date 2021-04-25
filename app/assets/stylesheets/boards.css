@@ -842,6 +842,7 @@ img {
 @media (max-width: 767px) {
   .footer__info {
     margin-top: 20px;
+    list-style: none;
   }
 }
 
