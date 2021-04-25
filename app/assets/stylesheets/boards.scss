@@ -865,7 +865,7 @@ $drawer-content-width: 200px;
 
 	@include mq('sp') {
 		margin-top: 20px;
-        list-style: none;
+		
 	}
 
 	p {
@@ -875,6 +875,7 @@ $drawer-content-width: 200px;
 
 		@include mq('sp') {
 			margin-bottom: 6px;
+			
 		}
 
 		&:last-child {
@@ -883,9 +884,21 @@ $drawer-content-width: 200px;
 	}
 
     ul{
-        display:flex;
-        justify-content:space-around;
-    }
+	   padding-left:0;
+   	   display:flex;
+   	   justify-content:space-around;
+   		
+	   li{
+   	      @include mq('sp') {
+   		    list-style: none;
+   		    display: block;
+
+   		    &:first-child {
+   			  margin-right:20px;
+   		    }
+   	      }   
+        }
+      }
 }
 
 

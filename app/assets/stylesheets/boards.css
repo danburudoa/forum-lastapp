@@ -842,7 +842,6 @@ img {
 @media (max-width: 767px) {
   .footer__info {
     margin-top: 20px;
-    list-style: none;
   }
 }
 
@@ -863,8 +862,19 @@ img {
 }
 
 .footer__info ul {
+  padding-left: 0;
   display: flex;
   justify-content: space-around;
+}
+
+@media (max-width: 767px) {
+  .footer__info ul li {
+    list-style: none;
+    display: block;
+  }
+  .footer__info ul li:first-child {
+    margin-right: 20px;
+  }
 }
 
 .footer__copy {
