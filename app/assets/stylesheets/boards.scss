@@ -308,7 +308,7 @@ img {
 .mainvisual {
 	height: 600px;
 	width: 100%;
-	background: transparent url(image_path('mainvisual.png')) no-repeat top center / cover;
+	background-image: url(<%= asset_path 'mainvisual.png' %>);
 	position: relative;
 	overflow: hidden;
 
