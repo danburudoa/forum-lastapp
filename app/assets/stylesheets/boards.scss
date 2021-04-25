@@ -834,7 +834,7 @@ $drawer-content-width: 200px;
 	background: linear-gradient(to bottom, #666, #333);
 
 	@include mq('sp') {
-		padding-top: 62px;
+		padding-top: 20px;
 		padding-bottom: 24px;
 	}
 }
@@ -866,9 +866,7 @@ $drawer-content-width: 200px;
 	@include mq('sp') {
 		margin-top: 20px;
 
-		ul{
-           display: flex;
-		}
+		
 	}
 
 	p {
