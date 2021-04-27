@@ -5,7 +5,4 @@ class Board < ApplicationRecord
     has_many :board_tag_relations
     has_many :tags, through: :board_tag_relations
 
-    validates :image, presence: true
-    validates :title, presence: true
-    validates :text,  presence: true
 end
