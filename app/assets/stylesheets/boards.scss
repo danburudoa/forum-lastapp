@@ -1326,41 +1326,6 @@ $hover-opacity: 0.7;
 	font-size:22px;
 }
 
-//カウンター機能
-#count-wrap{
-	margin-left:auto;
-}
-
-.count-suuzi{
-    display: flex;
-	justify-content: flex-end;
-		#bad-count{
-			margin-left: 40px;
-			margin-right:10px;
-	    }
-}
-
-.count-btn{
-	text-align: right;
-}
-
-#up{
-	background-color: rgb(235, 66, 66);
-	color:white;
-	border:none;
-	border-radius:4px;
-	padding:5px 10px ;
-	font-weight:bold;
-}
-
-#down{
-	margin-left:20px;
-	color:white;
-	border:none;
-	border-radius:4px;
-	padding:5px 10px;
-	background-color: rgb(143, 140, 140);
-}
 
 .tag-field{
   width: 100%;
@@ -1370,6 +1335,6 @@ $hover-opacity: 0.7;
 }
 
 .input-tag{
-  padding-left: 10px;
+  
 }
 	
