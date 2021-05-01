@@ -3,24 +3,22 @@ class BoardsController < ApplicationController
     before_action :set_tweet, only: [:edit, :show,:update,:destroy]
  
     def index
-      @boards = Board.includes(:user).all.order(created_at: :desc)
+      @boards = Board.includes(:user)
       @board_page = Board.all.page(params[:page]).per(10)
     end
     
     def new
-       @board = BoardsTag.new
+       @board = Board.new
     end
  
     def create
-      @board = BoardsTag.new(board_params)
-      if @board.valid?
-        @board.save
-        return redirect_to root_path
-      else
-        render "new"
-      end
+       @board = Board.new(board_params)
+       if @board.save
+          redirect_to root_path
+       else
+          render :new
+       end
     end
-  
     
     def show  
        @comment = Comment.new
@@ -32,11 +30,9 @@ class BoardsController < ApplicationController
     end
  
     def update
-      @board = BoardsTag.new(board_params)
-      @board.update(board_params)
-       if @board.valid?
-         @board.save
-         return redirect_to root_path
+       @board.update(board_params)
+       if @board.save
+          redirect_to root_path
        else 
           render :edit
        end
@@ -50,7 +46,7 @@ class BoardsController < ApplicationController
     private
  
     def board_params
-       params.require(:boards_tag).permit(:title,:text,:image,:name).merge(user_id: current_user.id)
+       params.require(:board).permit(:title,:text,:image).merge(user_id: current_user.id)
     end
  
     def set_tweet

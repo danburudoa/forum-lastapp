@@ -1,17 +1,10 @@
 <div class="card__item">
-	<%= link_to(board_path(board,tag), class: :media) do %>
+	<%= link_to(board_path(board), class: :media) do %>
 		<div class="media__img"><%= image_tag board.image.variant(resize: '300x200'), class: :board_img%></div><!-- /.media__img -->
 		<div class="media__body">
             <%= simple_format("#{board.title}", { class: 'media__title' }, { sanitize: false, wrapper_tag:"div" }) %>
             <%= simple_format("#{board.text}", { class: 'media__content' }, { sanitize: false, wrapper_tag:"div" }) %>
 			<!-- /.media__content -->
 		</div><!-- /.media__body -->
-		<ul class="tag">
-          <li class="tag-list">
-            <%board.tags.each do |tag| %>
-              <%=tag.name%>
-            <%end%>
-          </li>
-        </ul>
     <% end %>
 </div><!-- /.card__item -->

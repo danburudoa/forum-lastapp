@@ -309,6 +309,7 @@ img {
 	height: 600px;
 	width: 100%;
 	background: transparent url('mainvisual.png') no-repeat top center / cover;
+	//style="background-image: url(<%= tweet.image %>); 詳しくはPicTweetツイートを表示使用をみる"
 	position: relative;
 	overflow: hidden;
 
@@ -1251,6 +1252,7 @@ $hover-opacity: 0.7;
 .main-edit{
     background:#EEFFFF;
     padding: 10px;   
+	min-height: 90vh;
 }
 
 .inner-edit{
@@ -1326,15 +1328,7 @@ $hover-opacity: 0.7;
 	font-size:22px;
 }
 
+//タグ機能
 
-.tag-field{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-}
 
-.input-tag{
-  
-}
-	
+
