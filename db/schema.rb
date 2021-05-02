@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_27_035634) do
+ActiveRecord::Schema.define(version: 2021_05_02_093226) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2021_04_27_035634) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
-    t.bigint "user_id", null: false
-    t.bigint "board_id", null: false
+    t.bigint "user_id"
+    t.bigint "board_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["board_id"], name: "index_comments_on_board_id"
@@ -67,4 +67,6 @@ ActiveRecord::Schema.define(version: 2021_04_27_035634) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "boards", "users"
+  add_foreign_key "comments", "boards"
+  add_foreign_key "comments", "users"
 end

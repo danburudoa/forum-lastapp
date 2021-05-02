@@ -121,8 +121,8 @@ Basic認証
 | ------- | ---------- | ------------------------------ |
 | text    | text       |         null: false            |
 | user    | references |                                 |
-| prototype| references 
+| board   | references 
 
 ## Associate
 ・has_many :users<br>
-・belongs_to :board
+・has_many :boards
