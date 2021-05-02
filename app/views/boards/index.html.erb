@@ -2,6 +2,11 @@
 		<div class="inner header__inner">
 			<h1 class="header__logo">フィードバックチャンネル</h1>
 			<!-- /.header__logo -->
+			<nav class="header__nav">
+				<ul>
+					<li><a href="#a-card" class="is-active">最新記事</a></li>					
+				</ul>
+			</nav><!-- /.header__nav -->
 		</div><!-- /.header__inner -->
          </header><!-- /.header -->
 
@@ -45,8 +50,7 @@
 				<%= render partial: 'board', collection: @boards %>
 			</div><!-- /.card__items -->
 			<%= paginate @board_page %>
-		</div><!-- /.card__inner -->
-		
+		</div><!-- /.card__inner -->		
 	</section><!-- /.card -->
 
     <footer class="footer">

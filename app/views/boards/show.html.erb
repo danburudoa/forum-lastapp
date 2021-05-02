@@ -26,8 +26,6 @@
                </div>
             <% end %>
           </ol>
-          <!--パンくずリストここまで-->
-    
 
           <div class="head-area">    
               <%= image_tag (@board.image), class: :show_img %>    
@@ -53,8 +51,8 @@
                         <p class="comment_info">
                           <%= link_to "#{comment.user.nickname}", class: :comment_user %>
                           <%= l comment.created_at%>
-                        </p>
-                        <p class="comment_text"><%= comment.text %></p>
+                        </p>                  
+                          <p class="comment_text"><%= comment.text %></p>
                       </div>                 
                     </li>
                   <% end %>

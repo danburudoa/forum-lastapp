@@ -1274,3 +1274,39 @@ img {
 .comment_text {
   font-size: 22px;
 }
+
+#count-wrap {
+  margin-left: auto;
+}
+
+.count-suuzi {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.count-suuzi #bad-count {
+  margin-left: 40px;
+  margin-right: 10px;
+}
+
+.count-btn {
+  text-align: right;
+}
+
+#up {
+  background-color: #eb4242;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+#down {
+  margin-left: 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  background-color: #8f8c8c;
+}

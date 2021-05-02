@@ -153,3 +153,23 @@
 			return false;
 		});
 	</script>
+
+   <!--カウント-->
+    <script>
+	   var disp_count = document.getElementById("disp-count");
+	   var good_count = document.getElementById("good-count");
+	   var bad_count = document.getElementById("bad-count");
+	   var up = document.getElementById("up");
+	   var down = document.getElementById("down");
+	   var count = 0;
+
+	   up.addEventListener('click',function(){
+		   count += 1;
+          good_count.innerHTML = count;
+	   })
+	   down.addEventListener('click', function(){
+		   count -= 1;
+		   bad_count.innerHTML = count;
+	   })
+
+	</script>
