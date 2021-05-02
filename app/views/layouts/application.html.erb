@@ -10,14 +10,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- コード追加Bootstrap JavaScript読み込みコード-->
     
   </head>
 
 <body>
 
     <%= yield %>
-	<div class="totop floating"><a href="#"><%= image_tag 'totop.png', alt: "上部へスクロール"%></a></div><!-- /.totop -->
+	<div class="totop floating"><a href="#"><%= image_tag 'totop.png', alt: "上部へスクロール"%></a></div>
  </body>
 </html>
 
@@ -105,71 +104,9 @@
 	</script>
 
 
-
-	<%#クリック（タブ）%>
-	<script>
-		jQuery('.tab__nav ul li span').click(function (e) {
-			e.preventDefault();
-			let target = jQuery(this).data("target");
-
-			jQuery('.tab__nav ul li span').removeClass('is-active');
-			jQuery(this).addClass('is-active');
-
-			jQuery('.tab-item').removeClass('is-active');
-			jQuery(target).addClass('is-active');
-
-			return false;
-		});
-	</script>
-
-
 	<script>
 		jQuery('.accordion__head').click(function () {
 			jQuery(this).next().slideToggle();
 			jQuery(this).children('.according__icon').toggleClass('is-open');
 		});
-	</script>
-
-
-	<!---モーダル開く-->
-	<script>
-		jQuery('.js-modal-open').click(function (e) {
-			e.preventDefault();
-			let target = jQuery(this).data("target");
-			jQuery('.' + target).addClass('is-show');
-
-			return false;
-		});
-	</script>
-
-
-	<!---モーダル閉じる-->
-	<script>
-		jQuery('.js-modal-close').click(function (e) {
-			e.preventDefault();
-			let target = jQuery(this).data("target");
-			jQuery('.' + target).removeClass('is-show');
-
-			return false;
-		});
-	</script>
-
-   <!--カウント-->
-    <script>
-	   var disp_count = document.getElementById("disp-count");
-	   var good_count = document.getElementById("good-count");
-	   var bad_count = document.getElementById("bad-count");
-	   var up = document.getElementById("up");
-	   var down = document.getElementById("down");
-	   var count = 0;
-
-	   up.addEventListener('click',function(){
-		   count += 1;
-          good_count.innerHTML = count;
-	   })
-	   down.addEventListener('click', function(){
-		   count -= 1;
-		   bad_count.innerHTML = count;
-	   })
-
 	</script>
