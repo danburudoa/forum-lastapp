@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
         @time = @comment.created_at.strftime("%Y/%m/%d/ %H:%M:%S")
         ActionCable.server.broadcast 'comment_channel', content: @comment, user: @comment.user, date: @time
       else
-        redirect_to board_path(@comment.board) # 今回の実装には関係ありませんが、このようにPrefixでパスを指定することが望ましいです。
+        redirect_to board_path(@comment.board)
       end
     end
 
