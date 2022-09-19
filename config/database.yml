@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: forum_lastapp_production
+  database: forum-lastapp_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
