@@ -1,6 +1,6 @@
 <div class="card__item">
 	<%= link_to(board_path(board), class: :media) do %>
-		<div class="media__img"><%= image_tag board.image.variant(resize: '300x200'), class: :board_img%></div>
+		<div class="media__img"><%= image_tag (board.image), class: :board_img%></div>
 		<div class="media__body">
             <%= simple_format("#{board.title}", { class: 'media__title' }, { sanitize: false, wrapper_tag:"div" }) %>
             <%= simple_format("#{board.text}", { class: 'media__content' }, { sanitize: false, wrapper_tag:"div" }) %>
