@@ -1038,11 +1038,11 @@ img {
   padding: 10px;
   padding-top: 30px;
   height: 90vh;
-  background: #EEFFFF;
+  background: #efefef;
 }
 
 .main-login {
-  background: #EEFFFF;
+  background: #efefef;
   padding: 10px;
   height: 90vh;
   padding-top: 100px;
@@ -1087,7 +1087,7 @@ img {
 }
 
 .main-new {
-  background: #EEFFFF;
+  background: #efefef;
   padding: 10px;
   height: 90vh;
 }
@@ -1140,7 +1140,7 @@ img {
 }
 
 .main-show {
-  background: #EEFFFF;
+  background: #efefef;
   padding-top: 20px;
   min-height: 90vh;
 }
@@ -1202,7 +1202,7 @@ img {
 }
 
 .main-edit {
-  background: #EEFFFF;
+  background: #efefef;
   padding: 10px;
 }
 
@@ -1234,7 +1234,7 @@ img {
   border-radius: 3px;
   transition: 0.4s ease;
   margin: 0 4px;
-  background: #EEFFFF;
+  background: #efefef;
   font-weight: bold;
 }
 
