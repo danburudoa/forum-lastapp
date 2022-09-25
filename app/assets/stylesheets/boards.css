@@ -19,7 +19,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #fff;
+  background: #efefef;
   overflow-x: hidden;
   overflow-wrap: break-word;
   padding-top: 100px;
@@ -773,7 +773,7 @@ img {
 .card__item .board_img {
   width: 90%;
   height: 200px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 @media (max-width: 1247px) {
