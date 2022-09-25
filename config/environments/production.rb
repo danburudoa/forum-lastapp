@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   ActionCable.server.config.disable_request_forgery_protection = true
   config.action_cable.url = "ws://18.179.176.136/cable" 
-  config.action_cable.allowed_request_origins = ['http://18.179.176.136']
+  config.action_cable.allowed_request_origins = ['http://18.179.176.136/']
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -43,7 +43,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
-  config.action_cable.allowed_request_origins = [ 'http://18.179.176.136/', /http:\/\/18.179.176.136/ ]
+  # config.action_cable.allowed_request_origins = [ 'http://18.179.176.136/', /http:\/\/18.179.176.136/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
