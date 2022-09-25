@@ -3,7 +3,7 @@
  [![Image from Gyazo](https://i.gyazo.com/30cfeb5d5bdf7adb63a11b950133e4d8.jpg)](https://gyazo.com/30cfeb5d5bdf7adb63a11b950133e4d8)
  [![Image from Gyazo](https://i.gyazo.com/5368c9d5a11180de568afc6173704483.jpg)](https://gyazo.com/5368c9d5a11180de568afc6173704483)
 # App URL
-http://54.95.240.27/
+http://18.179.176.136/
 # テスト用アカウント
 Basic認証
 * ユーザー名 : admin
