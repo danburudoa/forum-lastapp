@@ -20,12 +20,12 @@
       <% if user_signed_in? && current_user.id == @board.user_id %>
         <div class="board__manage">
           <%= link_to "編集する", edit_board_path(@board), class: :board__btn %>
-          <%= link_to "削除する",  board_path(@board.id), method: :delete, class: :board__btn %>
+          <%= link_to "削除する", board_path(@board.id), method: :delete, class: :board__btn %>
         </div>
       <% end %>
     </ol>
-    <div class="head-area">    
-        <%= image_tag (@board.image), class: :show_img %>    
+    <div class="head-area">
+      <%= image_tag (@board.image), class: :show_img %>
       <div class="head-right">
         <h1><%= "#{@board.title}"%></h1>
         <h3 class="show_text"><%= "#{@board.text}"%></h3>
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    
+
     <%= paginate @comments%>
 
     <div class="board__comments">
@@ -47,9 +47,15 @@
                   <p class="comment_info">
                     <%= link_to "#{comment.user.nickname}", class: :comment_user %>
                     <%= l comment.created_at%>
-                  </p>                  
-                    <p class="comment_text"><%= comment.text %></p>
-                </div>                 
+                  </p>
+                  <p class="comment_text"><%= comment.text %></p>
+                  <div class="spinner_area">
+                    <div class="spinner_area_plus"">
+                      <p class="spinner_plus"><%= comment.favorites.count %></p>
+                      <%= render 'favorites/favorite', {comment: comment, board: @board} %>
+                    </div>
+                  </div>
+                </div>
               </li>
             <% end %>
           <% end %>
