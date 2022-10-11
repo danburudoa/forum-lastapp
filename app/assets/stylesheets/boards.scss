@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // 色
+
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+
 $color-main: #3f51b5; // ベース色
 $color-active: #e81919; // アクティブ色
 $color-background-base: #fff; // 背景色
