@@ -1,0 +1,13 @@
+<% if current_user.already_favorited?(comment)%>
+  <p id="favorite_buttons_<%= comment.id %>" class="btnspinner">
+    <%= link_to board_comment_favorite_path(board_id: params[:id], comment_id: comment.id), class: "favorite_link", method: :delete do %>
+      <i class="fa-solid fa-heart"></i>
+    <% end %>
+  </p>
+<% else %>
+  <p id="favorite_buttons_<%= comment.id %>" class="btnspinner">
+    <%= link_to board_comment_favorites_path(board_id: params[:id], comment_id: comment.id), class: "favorite_link", method: :post do %>
+      <i class="fa-solid fa-heart" style="color: grey;"></i>
+    <% end %>
+  </p>
+<% end %>
