@@ -1,27 +1,31 @@
 	<header class="header">
 		<div class="inner header__inner">
 			<h1 class="header__logo">フィードバックチャンネル</h1>
-			<nav class="header__nav">
-				<ul>
-					<li><a href="#a-card" class="is-active">最新記事</a></li>					
-				</ul>
-			</nav>
+			<% if user_signed_in? %>
+        <nav class="header__nav">
+          <ul>
+            <li><a href="#a-card" class="is-active">最新記事</a></li>
+          </ul>
+        </nav>
+			<% end %>
 		</div>
   </header>
-
-	<button class="drawer-icon js-drawer for-drawer" type="button" data-target="for-drawer">
-		<span class="drawer-bars">
-			<span class="drawer-bar"></span>
-			<span class="drawer-bar"></span>
-			<span class="drawer-bar"></span>
-		</span>
-	</button>
-	<div class="drawer-background for-drawer"></div>
-	<div class="drawer-content for-drawer">
-		<ul>
-			<li><a href="#a-card">最新テーマ</a></li>
-		</ul>
-	</div>
+  
+	<% if user_signed_in? %>
+    <button class="drawer-icon js-drawer for-drawer" type="button" data-target="for-drawer">
+      <span class="drawer-bars">
+        <span class="drawer-bar"></span>
+        <span class="drawer-bar"></span>
+        <span class="drawer-bar"></span>
+      </span>
+    </button>
+    <div class="drawer-background for-drawer"></div>
+    <div class="drawer-content for-drawer">
+      <ul>
+        <li><a href="#a-card">最新テーマ</a></li>
+      </ul>
+    </div>
+	<% end %>
 
 
 
@@ -39,16 +43,17 @@
 		</div>
 	</div>
 
-
-	<section id="a-card" class="card section">
-		<div class="card__inner inner">
-			<h2 class="section-title">最新テーマ</h2>
-			<div class="card__items">
-				<%= render partial: 'board', collection: @boards %>
-			</div>
-			<%= paginate @board_page %>
-		</div>
-	</section>
+	<% if user_signed_in? %>
+    <section id="a-card" class="card section">
+      <div class="card__inner inner">
+        <h2 class="section-title">最新テーマ</h2>
+        <div class="card__items">
+          <%= render partial: 'board', collection: @boards %>
+        </div>
+        <%= paginate @board_page %>
+      </div>
+    </section>
+	<% end %>
 
     <footer class="footer">
 		<div class="footer__inner inner">
