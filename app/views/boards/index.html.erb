@@ -7,7 +7,7 @@
 				</ul>
 			</nav>
 		</div>
-         </header>
+  </header>
 
 	<button class="drawer-icon js-drawer for-drawer" type="button" data-target="for-drawer">
 		<span class="drawer-bars">
@@ -30,11 +30,11 @@
 			<div class="mainvisual__title">一番伝えたい<br class="hidden-tab hidden-pc">ことを書く</div>
 			<div class="mainvisual__lead">意見をたくさんもらおう</div>
 			<% if user_signed_in? %>
-			  <div class="mainvisual__button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'button-mainvisual'%></div>
-			  <div class="mainvisual__button"><%= link_to '投稿する', new_board_path, class: 'button-mainvisual'%></div>
+        <div class="mainvisual__button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'button-mainvisual'%></div>
+        <div class="mainvisual__button"><%= link_to '投稿する', new_board_path, class: 'button-mainvisual'%></div>
 			<% else%>
-			  <div class="mainvisual__button"><%= link_to "新規登録", new_user_registration_path, class: 'button-mainvisual'%></div> 
-			  <div class="mainvisual__button"><%= link_to "ログイン", new_user_session_path, class: 'button-mainvisual'%></div>		
+        <div class="mainvisual__button"><%= link_to "新規登録", new_user_registration_path, class: 'button-mainvisual'%></div> 
+        <div class="mainvisual__button"><%= link_to "ログイン", new_user_session_path, class: 'button-mainvisual'%></div>		
 			<% end %>
 		</div>
 	</div>
@@ -55,15 +55,15 @@
 			<div class="footer__contents">
 				<div class="footer__center">
 					<div class="footer__info">
-					    <p>コンセプト<p/>
+            <p>コンセプト<p/>
 						<ul>
-						   <li>自分の考えを投稿してフィードバックをもらおう。</li>
-						   <li>誹謗中傷のないように。</li>
+              <li>自分の考えを投稿してフィードバックをもらおう。</li>
+              <li>誹謗中傷のないように。</li>
 						</ul>
 					</div>
 				</div>	
 			</div>
 			<div class="footer__copy">Copyright &copy; 2020 
-			  <a href="#" target="_blank"></a></div>
+        <a href="#" target="_blank"></a></div>
 		</div>
 	</footer>
