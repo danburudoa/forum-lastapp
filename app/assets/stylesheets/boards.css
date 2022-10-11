@@ -253,7 +253,7 @@ img {
 }
 
 .mainvisual {
-  height: 600px;
+  height: 100vh !important;
   width: 100%;
   background: transparent url("mainvisual.png") no-repeat top center/cover;
   position: relative;
