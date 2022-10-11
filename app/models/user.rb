@@ -12,4 +12,11 @@ class User < ApplicationRecord
   validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
   validates :nickname, presence: true, length: { maximum: 20}
   validates :email, presence: true
+
+  # いいねを押したか押してないかを判定
+  def already_favorited?(comment)
+    # current_user.favorite.find_by(recipe_id: params[:recipe_id]).present?
+    self.favorites.exists?(comment_id: comment.id)
+  end
+
 end
